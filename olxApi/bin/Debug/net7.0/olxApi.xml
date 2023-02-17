@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>olxApi</name>
+    </assembly>
+    <members>
+        <member name="M:olxApi.Controllers.anuncioController.addAnuncio(olxApi.Dtos.CreateAnuncioDto)">
+            <summary>
+            Create a new Anuncio
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.categoryController.addCategory(olxApi.Dtos.CreateCategoryDto)">
+            <summary>
+            Create a new Category
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.addUser(olxApi.Dtos.CreateUserDto)">
+            <summary>
+            Create a new User
+            </summary>
+        </member>
+    </members>
+</doc>

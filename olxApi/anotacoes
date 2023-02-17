@@ -1,0 +1,110 @@
+para criar uma nova api :
+    dotnet new webapi --name FilmesApi
+
+para executar a api:
+    dotnet run --project FilmesApi/FilmesApi.csproj
+
+history |grep docker
+
+        <comandos importantes>
+take = pegar qtd de registros
+skip = pular qtd de registros
+apllyTo = aplicavel em f(x) ou propriedade    (é como se fosse uma validação)
+SaveChanges = salva as alterações no banco de dados
+Add = adiciona um novo registro no banco de dados
+NoContent = retorna um status 204
+
+
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 7.0.2
+<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.2" />
+
+
+<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+
+
+Recentemente, vimos que utilizar o DbContext é 
+uma das principais maneiras de acessar o banco de dados.
+
+assinale o que for verdadeiro:
+
+o dbcontext prove uma sintaze fora do ecopo c para acessar o banco de dados
+    //false
+aumenta a performance de acesso ao banco
+    //false
+abstrair a logica de acesso ao banco de dados
+    //true
+servew apenas para colocarmos nosso proprio codigo de acesso ao banco
+
+
+http://localhost:5287/filme/?skip=3&take=30
+
+
+Como recuperar informações da API através da criação de actions.
+O verbo GET visa retornar recursos da API.
+Como enviar parâmetros através da URL de requisição.
+Como filtrar recursos para retornar para o usuário utilizando LINQ.
+Status 404 indica que um recurso não foi encontrado.
+Como tornar nossos retornos mais enxutos através de conceitos de paginação.
+Como aplicar paginação através dos métodos Skip() e Take().
+
+Quando criamos um recurso novo no sistema através do verbo POST,
+ há uma convenção do que deve ser retornado caso a requisição tenha sido efetuada com sucesso.
+ created + location com numero 201
+
+
+para fazer migrations no linux:
+    dotnet tool install --global dotnet-ef
+    dotnet ef migrations add OlxMigration
+    dotnet ef database update
+
+    importante colocar ID user e senha no appsettings.json
+    além de colocar o nome do banco de dados
+
+
+Padrao DTO (Data Transfer Object)
+    é um objeto que contem apenas os dados que queremos retornar para o usuario
+    é um objeto que contem apenas os dados que queremos receber do usuario
+
+
+    Como abrir uma conexão entre a API e o banco de dados através do EntityFramework.
+-- comando : dotnet ef migrations add FilmeMigration
+-- comando : dotnet ef database update
+
+    Como gerar migrations com .NET 6 e mapear nosso objeto no banco de dados.
+
+    O DbContext serve como ponte e para fazer operações no banco.
+
+    Como injetar o DbContext em nosso controlador a fim de acessar o banco de dados.
+
+    Como salvar as alterações no banco de dados através do método SaveChanges() :
+    
+    DTOs nos ajudam a não deixar nosso modelo de banco de dados exposto.
+
+    Como fazer conversões práticas entre diferentes tipos através do AutoMapper.
+
+
+Para altera através do patch:
+    [
+        {
+            "op" : "replace",
+            "path" : "/nome",
+            "value" : "novo nome"
+        }
+    ]
+
+    <history |grep microsoft>
+        history CMD
+
+
+
+O verbo PUT pode ser utilizado quando queremos atualizar algum recurso no sistema.
+
+O verbo PATCH também pode ser utilizado para atualizações, porém de maneira parcial.
+
+Apesar do verbo PATCH não exigir a passagem completa do objeto a ser atualizado, exige uma configuração mais complexa.
+
+O verbo DELETE deve ser utilizado quando queremos deletar um recurso no sistema.
+
+Quando um recurso é atualizado ou removido com sucesso, devemos retornar status 204 (No Content).
+
+O Swagger auxilia o processo de entendimento sobre uma rota, seus parâmetros e retornos.''
