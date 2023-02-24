@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace olxApi.Dtos;
 
 public class CreateAnuncioDto
 {
     [Required]
-    [ForeignKey("idUser")]
+    [ForeignKey("Users")]
     // [StringLength(24, ErrorMessage ="O id do usuário deve ter no máximo 24 caracteres")]
     // [RegularExpression(@"^[a-fA-F0-9]{24}$", ErrorMessage ="O id do usuário deve ser um ObjectId válido")]
     // [Display(Name = "Id do usuário")]
@@ -18,7 +19,7 @@ public class CreateAnuncioDto
 
     [Required]
     [StringLength(50, ErrorMessage ="O nome da categoria deve ter no máximo 50 caracteres")]
-    public string category { get; set; }
+    public string cat { get; set; }
 
     [Required]
     public DateTime dateCreated { get; set; } 
@@ -32,15 +33,16 @@ public class CreateAnuncioDto
     public double price { get; set; }
 
     [Required]
-    public bool priceNegociable { get; set; }
+    public bool priceNeg { get; set; }
 
     [Required]
     [StringLength(400, ErrorMessage ="A descrição deve ter no máximo 400 caracteres")]
-    public string description { get; set; }
+    public string desc { get; set; }
 
     [Required]
     public int views { get; set; }
 
     [Required]
     public string status { get; set; }
+
 }

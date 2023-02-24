@@ -12,8 +12,8 @@ using olxApi.Data;
 namespace olxApi.Migrations
 {
     [DbContext(typeof(OlxContext))]
-    [Migration("20230217121527_OlxMigration")]
-    partial class OlxMigration
+    [Migration("20230223135926_InitialCreate3")]
+    partial class InitialCreate3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace olxApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("_id"));
 
-                    b.Property<string>("category")
+                    b.Property<string>("cat")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
@@ -40,7 +40,7 @@ namespace olxApi.Migrations
                     b.Property<DateTime>("dateCreated")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("description")
+                    b.Property<string>("desc")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -51,7 +51,7 @@ namespace olxApi.Migrations
                     b.Property<double>("price")
                         .HasColumnType("double precision");
 
-                    b.Property<bool>("priceNegociable")
+                    b.Property<bool>("priceNeg")
                         .HasColumnType("boolean");
 
                     b.Property<string>("state")
@@ -73,7 +73,7 @@ namespace olxApi.Migrations
 
                     b.HasKey("_id");
 
-                    b.ToTable("ListAnuncios");
+                    b.ToTable("Anuncios");
                 });
 
             modelBuilder.Entity("olxApi.Models.Category", b =>
@@ -96,7 +96,7 @@ namespace olxApi.Migrations
 
                     b.HasKey("_id");
 
-                    b.ToTable("ListCategories");
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("olxApi.Models.State", b =>
@@ -112,7 +112,7 @@ namespace olxApi.Migrations
 
                     b.HasKey("_id");
 
-                    b.ToTable("ListStates");
+                    b.ToTable("States");
                 });
 
             modelBuilder.Entity("olxApi.Models.User", b =>
@@ -147,7 +147,7 @@ namespace olxApi.Migrations
 
                     b.HasKey("_id");
 
-                    b.ToTable("ListUsers");
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

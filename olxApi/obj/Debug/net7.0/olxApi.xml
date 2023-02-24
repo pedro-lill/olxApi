@@ -4,9 +4,44 @@
         <name>olxApi</name>
     </assembly>
     <members>
+        <member name="M:olxApi.Controllers.anuncioController.#ctor(olxApi.Data.OlxContext,AutoMapper.IMapper)">
+            <summary>
+            Anuncio Controller
+            </summary>
+        </member>
         <member name="M:olxApi.Controllers.anuncioController.addAnuncio(olxApi.Dtos.CreateAnuncioDto)">
             <summary>
             Create a new Anuncio
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.anuncioController.UpdateAnuncio(System.Int32,olxApi.Dtos.UpdateAnuncioDto)">
+            <summary>
+            Update a Anuncio
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.anuncioController.GetAllAnuncios(System.Int32,System.Int32)">
+            <summary>
+            Get all Anuncios
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.anuncioController.RetriveAdById(System.Int32)">
+            <summary>
+            Get Anuncio by Id
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.anuncioController.PartialAnuncioUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{olxApi.Dtos.UpdateAnuncioDto})">
+            <summary>
+            Partially update a Anuncio
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.anuncioController.DeleteAnuncio(System.Int32)">
+            <summary>
+            Delete a Anuncio
+            </summary>
+        </member>
+        <member name="T:olxApi.Controllers.categoryController">
+            <summary>
+            Category Controller
             </summary>
         </member>
         <member name="M:olxApi.Controllers.categoryController.addCategory(olxApi.Dtos.CreateCategoryDto)">
@@ -14,9 +49,89 @@
             Create a new Category
             </summary>
         </member>
+        <member name="M:olxApi.Controllers.categoryController.UpdateCategory(System.Int32,olxApi.Dtos.UpdateCategoryDto)">
+            <summary>
+            Update a Category
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.categoryController.GetAllCategories(System.Int32,System.Int32)">
+            <summary>
+            Get all Categories
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.categoryController.RetriveAdById(System.Int32)">
+            <summary>
+            Get a Category by id
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.categoryController.PartialCategoryUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{olxApi.Dtos.UpdateCategoryDto})">
+            <summary>
+            Partially update a Category
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.categoryController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete a Category
+            </summary>
+        </member>
         <member name="M:olxApi.Controllers.userController.addUser(olxApi.Dtos.CreateUserDto)">
             <summary>
             Create a new User
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.UpdateUser(System.Int32,olxApi.Dtos.UpdateUserDto)">
+            <summary>
+            Update a User
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.GetAllUsers(System.Int32,System.Int32)">
+            <summary>
+            Get all Users
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.RetriveUserById(System.Int32)">
+            <summary>
+            Get a User by id
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.PartialUserUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{olxApi.Dtos.UpdateUserDto})">
+            <summary>
+            Partially update a User
+            </summary>
+        </member>
+        <member name="M:olxApi.Controllers.userController.DeleteUser(System.Int32)">
+            <summary>
+            Delete a User
+            </summary>
+        </member>
+        <member name="T:olxApi.Data.OlxContext">
+            <summary>
+            Olx Context
+            </summary>
+        </member>
+        <member name="P:olxApi.Data.OlxContext.Anuncios">
+            <summary>
+            Anuncios
+            </summary>
+        </member>
+        <member name="P:olxApi.Data.OlxContext.States">
+            <summary>
+            Categories
+            </summary>
+        </member>
+        <member name="P:olxApi.Data.OlxContext.Users">
+            <summary>
+            Users
+            </summary>
+        </member>
+        <member name="P:olxApi.Data.OlxContext.Categories">
+            <summary>
+            Categories
+            </summary>
+        </member>
+        <member name="T:olxApi.Dtos.UpdateAnuncioDto">
+            <summary>
+            Dto to create a new Anuncio
             </summary>
         </member>
     </members>

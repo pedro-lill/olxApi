@@ -9,18 +9,18 @@ namespace olxApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-
 public class anuncioController : ControllerBase
     {
-
         private OlxContext _context;
         private IMapper _mapper;
+        /// <summary>
+        /// Anuncio Controller
+        /// </summary>
         public anuncioController(OlxContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
     }
-
     
     /// <summary>
     /// Create a new Anuncio
@@ -33,12 +33,11 @@ public class anuncioController : ControllerBase
             try
             {
             Anuncio anuncio = _mapper.Map<Anuncio>(anuncioDto);
-            _context.ListAnuncios.Add(anuncio);
+            _context.Anuncios.Add(anuncio);
             _context.SaveChanges();
             return CreatedAtAction(nameof(RetriveAdById), 
                 new { id = anuncio._id }, 
                 anuncio);
-                
             }
             catch (System.Exception e)
             {
@@ -46,12 +45,15 @@ public class anuncioController : ControllerBase
                 throw;
             }
         }
-        
+    
+    /// <summary>
+    /// Update a Anuncio
+    /// </summary>
     [HttpPut("{id}")]
     public IActionResult UpdateAnuncio(int id,
         [FromBody] UpdateAnuncioDto anuncioDto)
     {
-        var anuncio = _context.ListAnuncios.FirstOrDefault(anuncio =>
+        var anuncio = _context.Anuncios.FirstOrDefault(anuncio =>
             anuncio._id == id);
         if (anuncio == null)
         {
@@ -62,18 +64,24 @@ public class anuncioController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Get all Anuncios
+    /// </summary>
     [HttpGet]
     public IEnumerable <ReadAnuncioDto> GetAllAnuncios(
             [FromQuery] int skip=0, [FromQuery] int take =30)
         {
             return _mapper.Map<List<ReadAnuncioDto>>(
-                _context.ListAnuncios.Skip(skip).Take(take));
+                _context.Anuncios.Skip(skip).Take(take));
         } 
 
+    /// <summary>
+    /// Get Anuncio by Id
+    /// </summary>
     [HttpGet("{id}")]
     public IActionResult RetriveAdById(int id)
     {
-        var anuncio = _context.ListAnuncios.FirstOrDefault(anuncio => anuncio._id == id);
+        var anuncio = _context.Anuncios.FirstOrDefault(anuncio => anuncio._id == id);
         if (anuncio == null)
         {
             return NotFound();
@@ -82,11 +90,14 @@ public class anuncioController : ControllerBase
         return Ok(anuncioDto);
     }
 
+    /// <summary>
+    /// Partially update a Anuncio
+    /// </summary>
     [HttpPatch("{id}")]
     public IActionResult PartialAnuncioUpdate(int id,
         JsonPatchDocument<UpdateAnuncioDto> patchDoc)
     {
-        var anuncio = _context.ListAnuncios.FirstOrDefault(anuncio =>
+        var anuncio = _context.Anuncios.FirstOrDefault(anuncio =>
         anuncio._id == id);
         if (anuncio == null)
             return NotFound();
@@ -100,11 +111,13 @@ public class anuncioController : ControllerBase
         return NoContent();
     }
 
-
+    /// <summary>
+    /// Delete a Anuncio
+    /// </summary>
     [HttpDelete("{id}")]
     public IActionResult DeleteAnuncio(int id)
     {
-        var anuncio = _context.ListAnuncios.FirstOrDefault(anuncio =>
+        var anuncio = _context.Anuncios.FirstOrDefault(anuncio =>
         anuncio._id == id);
         if (anuncio == null) 
             return NotFound();

@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace olxApi.Data;
 
+/// <summary>
+/// Olx Context
+/// </summary>
 public class OlxContext : DbContext
 {
     public OlxContext(DbContextOptions<OlxContext> options) 
@@ -10,10 +13,22 @@ public class OlxContext : DbContext
     {
 
     }
-    public DbSet<Anuncio> ListAnuncios { get; set; }  
-    public DbSet<State> ListStates { get; set; }    
-    public DbSet<User> ListUsers { get; set; }
-    public DbSet<Category> ListCategories { get; set; }    
+    /// <summary>
+    /// Anuncios
+    /// </summary>
+    public DbSet<Anuncio> Anuncios { get; set; }  
+    /// <summary>
+    /// Categories
+    /// </summary>
+    public DbSet<State> States { get; set; }    
+    /// <summary>
+    /// Users
+    /// </summary>
+    public DbSet<User> Users { get; set; }
+    /// <summary>
+    /// Categories
+    /// </summary>
+    public DbSet<Category> Categories { get; set; }    
 
 
 }

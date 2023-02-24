@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using olxApi.Data;
@@ -11,9 +12,10 @@ using olxApi.Data;
 namespace olxApi.Migrations
 {
     [DbContext(typeof(OlxContext))]
-    partial class OlxContextModelSnapshot : ModelSnapshot
+    [Migration("20230224120924_InitialCreate4")]
+    partial class InitialCreate4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,8 +32,10 @@ namespace olxApi.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("_id"));
 
-                    b.Property<int>("category_id")
-                        .HasColumnType("integer");
+                    b.Property<string>("cat")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<DateTime>("dateCreated")
                         .HasColumnType("timestamp with time zone");
@@ -39,16 +43,6 @@ namespace olxApi.Migrations
                     b.Property<string>("desc")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<string>("idCat")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("idState")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("idUser")
                         .IsRequired()
@@ -60,8 +54,9 @@ namespace olxApi.Migrations
                     b.Property<bool>("priceNeg")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("state_id")
+                    b.Property<string>("state")
                         .IsRequired()
+                        .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
                     b.Property<string>("status")
@@ -73,19 +68,10 @@ namespace olxApi.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.Property<int>("user_id")
-                        .HasColumnType("integer");
-
                     b.Property<int>("views")
                         .HasColumnType("integer");
 
                     b.HasKey("_id");
-
-                    b.HasIndex("category_id");
-
-                    b.HasIndex("state_id");
-
-                    b.HasIndex("user_id");
 
                     b.ToTable("Anuncios");
                 });
@@ -162,33 +148,6 @@ namespace olxApi.Migrations
                     b.HasKey("_id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("olxApi.Models.Anuncio", b =>
-                {
-                    b.HasOne("olxApi.Models.Category", "category")
-                        .WithMany()
-                        .HasForeignKey("category_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("olxApi.Models.State", "state")
-                        .WithMany()
-                        .HasForeignKey("state_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("olxApi.Models.User", "user")
-                        .WithMany()
-                        .HasForeignKey("user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("category");
-
-                    b.Navigation("state");
-
-                    b.Navigation("user");
                 });
 #pragma warning restore 612, 618
         }

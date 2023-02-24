@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/desbravador/Documents/olxApi/olxApi/olxApi.csproj": {}
+    "/home/desbravador/Documents/newapi/olxApi/olxApi/olxApi.csproj": {}
   },
   "projects": {
-    "/home/desbravador/Documents/olxApi/olxApi/olxApi.csproj": {
+    "/home/desbravador/Documents/newapi/olxApi/olxApi/olxApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/desbravador/Documents/olxApi/olxApi/olxApi.csproj",
+        "projectUniqueName": "/home/desbravador/Documents/newapi/olxApi/olxApi/olxApi.csproj",
         "projectName": "olxApi",
-        "projectPath": "/home/desbravador/Documents/olxApi/olxApi/olxApi.csproj",
+        "projectPath": "/home/desbravador/Documents/newapi/olxApi/olxApi/olxApi.csproj",
         "packagesPath": "/home/desbravador/.nuget/packages/",
-        "outputPath": "/home/desbravador/Documents/olxApi/olxApi/obj/",
+        "outputPath": "/home/desbravador/Documents/newapi/olxApi/olxApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/desbravador/.nuget/NuGet/NuGet.Config"

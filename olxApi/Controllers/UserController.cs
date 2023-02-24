@@ -10,6 +10,9 @@ namespace olxApi.Controllers;
 [ApiController]
 [Route("[controller]")]
 
+/// <summary>
+/// User Controller
+/// </summary>
 public class userController : ControllerBase
     {
         private OlxContext _context;
@@ -18,18 +21,6 @@ public class userController : ControllerBase
     {
         _context = context;
         _mapper = mapper;
-    }
-
-    [HttpPost("login")]
-    public IActionResult Login([FromBody] UserDto userDto)
-    {
-        var user = _context.ListUsers.FirstOrDefault(user =>
-            user.email == userDto.email && user.password == userDto.password);
-        if (user == null)
-        {
-            return NotFound();
-        }
-        return Ok(user);
     }
     
     /// <summary>
@@ -40,20 +31,22 @@ public class userController : ControllerBase
     public IActionResult addUser(
         [FromBody] CreateUserDto userDto)
         {
-
             User user = _mapper.Map<User>(userDto);
-            _context.ListUsers.Add(user);
+            _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(RetriveUserById), 
                 new { id = user._id }, 
                 user);
         }
-        
+    
+    /// <summary>
+    /// Update a User
+    /// </summary>
     [HttpPut("{id}")]
     public IActionResult UpdateUser(int id,
         [FromBody] UpdateUserDto anuncioDto)
     {
-        var anuncio = _context.ListUsers.FirstOrDefault(anuncio =>
+        var anuncio = _context.Users.FirstOrDefault(anuncio =>
             anuncio._id == id);
         if (anuncio == null)
         {
@@ -64,18 +57,24 @@ public class userController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Get all Users
+    /// </summary>
     [HttpGet]
     public IEnumerable <ReadUserDto> GetAllUsers(
             [FromQuery] int skip=0, [FromQuery] int take =30)
         {
             return _mapper.Map<List<ReadUserDto>>(
-                _context.ListUsers.Skip(skip).Take(take));
+                _context.Users.Skip(skip).Take(take));
         } 
 
+    /// <summary>
+    /// Get a User by id
+    /// </summary>
     [HttpGet("{id}")]
     public IActionResult RetriveUserById(int id)
     {
-        var anuncio = _context.ListUsers.FirstOrDefault(anuncio => anuncio._id == id);
+        var anuncio = _context.Users.FirstOrDefault(anuncio => anuncio._id == id);
         if (anuncio == null)
         {
             return NotFound();
@@ -84,11 +83,14 @@ public class userController : ControllerBase
         return Ok(anuncioDto);
     }
 
+    /// <summary>
+    /// Partially update a User
+    /// </summary>
     [HttpPatch("{id}")]
     public IActionResult PartialUserUpdate(int id,
         JsonPatchDocument<UpdateUserDto> patchDoc)
     {
-        var anuncio = _context.ListUsers.FirstOrDefault(anuncio =>
+        var anuncio = _context.Users.FirstOrDefault(anuncio =>
         anuncio._id == id);
         if (anuncio == null)
             return NotFound();
@@ -102,11 +104,13 @@ public class userController : ControllerBase
         return NoContent();
     }
 
-
+    /// <summary>
+    /// Delete a User
+    /// </summary>
     [HttpDelete("{id}")]
     public IActionResult DeleteUser(int id)
     {
-        var anuncio = _context.ListUsers.FirstOrDefault(anuncio =>
+        var anuncio = _context.Users.FirstOrDefault(anuncio =>
         anuncio._id == id);
         if (anuncio == null) 
             return NotFound();

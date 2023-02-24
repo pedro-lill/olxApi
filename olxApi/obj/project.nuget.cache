@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XJg3bl+phzWxNTgG78dGGkCA3z3Gk7EyO7ZAm4feDmJ2xcH/0reBQfmFSTtJjARgAC3c1pk53Muv6smIRB0pJw==",
+  "dgSpecHash": "tt5/39c8gWaF5abUObrsKBhCdJTsABJoW8MioKE0GCI6fU4r7BI3vF7uoCUl0tlfRpjzFVw1otrPfHw0xQtQOA==",
   "success": true,
-  "projectFilePath": "/home/desbravador/Documents/olxApi/olxApi/olxApi.csproj",
+  "projectFilePath": "/home/desbravador/Documents/newapi/olxApi/olxApi/olxApi.csproj",
   "expectedPackageFiles": [
     "/home/desbravador/.nuget/packages/automapper/5.0.2/automapper.5.0.2.nupkg.sha512",
     "/home/desbravador/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/1.1.0/automapper.extensions.microsoft.dependencyinjection.1.1.0.nupkg.sha512",

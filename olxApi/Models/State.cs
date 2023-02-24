@@ -1,15 +1,19 @@
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 namespace olxApi.Models;
-
+/// <summary>
+/// State model
+/// </summary>
 public class State
 {
-    // state has a 2 elements _id, name
+    /// <summary>
+    /// State id
+    /// </summary>
     [Key]
-    [Required]
-    [MaxLength(50)]
     public string _id { get; set; }
 
+    /// <summary>
+    /// State name
+    /// </summary>
     [Required]
     [MaxLength(50)]
     public string name { get; set; }

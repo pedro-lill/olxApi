@@ -6,34 +6,34 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace olxApi.Migrations
 {
-    public partial class OlxMigration : Migration
+    public partial class InitialCreate3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ListAnuncios",
+                name: "Anuncios",
                 columns: table => new
                 {
                     _id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     idUser = table.Column<string>(type: "text", nullable: false),
                     state = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    category = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    cat = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     dateCreated = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     title = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     price = table.Column<double>(type: "double precision", nullable: false),
-                    priceNegociable = table.Column<bool>(type: "boolean", nullable: false),
-                    description = table.Column<string>(type: "text", nullable: false),
+                    priceNeg = table.Column<bool>(type: "boolean", nullable: false),
+                    desc = table.Column<string>(type: "text", nullable: false),
                     views = table.Column<int>(type: "integer", nullable: false),
                     status = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListAnuncios", x => x._id);
+                    table.PrimaryKey("PK_Anuncios", x => x._id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ListCategories",
+                name: "Categories",
                 columns: table => new
                 {
                     _id = table.Column<int>(type: "integer", nullable: false)
@@ -43,11 +43,11 @@ namespace olxApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListCategories", x => x._id);
+                    table.PrimaryKey("PK_Categories", x => x._id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ListStates",
+                name: "States",
                 columns: table => new
                 {
                     _id = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
@@ -55,11 +55,11 @@ namespace olxApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListStates", x => x._id);
+                    table.PrimaryKey("PK_States", x => x._id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ListUsers",
+                name: "Users",
                 columns: table => new
                 {
                     _id = table.Column<int>(type: "integer", nullable: false)
@@ -72,23 +72,23 @@ namespace olxApi.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ListUsers", x => x._id);
+                    table.PrimaryKey("PK_Users", x => x._id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ListAnuncios");
+                name: "Anuncios");
 
             migrationBuilder.DropTable(
-                name: "ListCategories");
+                name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "ListStates");
+                name: "States");
 
             migrationBuilder.DropTable(
-                name: "ListUsers");
+                name: "Users");
         }
     }
 }

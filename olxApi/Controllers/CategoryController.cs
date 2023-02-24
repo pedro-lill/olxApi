@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace olxApi.Controllers;
 
+/// <summary>
+/// Category Controller
+/// </summary>
 [ApiController]
 [Route("[controller]")]
-
 public class categoryController : ControllerBase
     {
 
@@ -21,7 +23,6 @@ public class categoryController : ControllerBase
         _mapper = mapper;
     }
 
-    
     /// <summary>
     /// Create a new Category
     /// </summary>
@@ -33,7 +34,7 @@ public class categoryController : ControllerBase
             try
             {
             Category category = _mapper.Map<Category>(categoryDto);
-            _context.ListCategories.Add(category);
+            _context.Categories.Add(category);
             _context.SaveChanges();
             return CreatedAtAction(nameof(RetriveAdById), 
                 new { id = category._id }, 
@@ -47,11 +48,14 @@ public class categoryController : ControllerBase
             }
         }
         
+    /// <summary>
+    /// Update a Category
+    /// </summary>
     [HttpPut("{id}")]
     public IActionResult UpdateCategory(int id,
         [FromBody] UpdateCategoryDto categoryDto)
     {
-        var category = _context.ListCategories.FirstOrDefault(category =>
+        var category = _context.Categories.FirstOrDefault(category =>
             category._id == id);
         if (category == null)
         {
@@ -62,18 +66,24 @@ public class categoryController : ControllerBase
         return NoContent();
     }
 
+    /// <summary>
+    /// Get all Categories
+    /// </summary>
     [HttpGet]
     public IEnumerable <ReadCategoryDto> GetAllCategories(
             [FromQuery] int skip=0, [FromQuery] int take =30)
         {
             return _mapper.Map<List<ReadCategoryDto>>(
-                _context.ListCategories.Skip(skip).Take(take));
+                _context.Categories.Skip(skip).Take(take));
         } 
 
+    /// <summary>
+    /// Get a Category by id
+    /// </summary>
     [HttpGet("{id}")]
     public IActionResult RetriveAdById(int id)
     {
-        var category = _context.ListCategories.FirstOrDefault(category => category._id == id);
+        var category = _context.Categories.FirstOrDefault(category => category._id == id);
         if (category == null)
         {
             return NotFound();
@@ -82,11 +92,14 @@ public class categoryController : ControllerBase
         return Ok(categoryDto);
     }
 
+    /// <summary>
+    /// Partially update a Category
+    /// </summary>
     [HttpPatch("{id}")]
     public IActionResult PartialCategoryUpdate(int id,
         JsonPatchDocument<UpdateCategoryDto> patchDoc)
     {
-        var category = _context.ListCategories.FirstOrDefault(category =>
+        var category = _context.Categories.FirstOrDefault(category =>
         category._id == id);
         if (category == null)
             return NotFound();
@@ -100,11 +113,13 @@ public class categoryController : ControllerBase
         return NoContent();
     }
 
-
+    /// <summary>
+    /// Delete a Category
+    /// </summary>
     [HttpDelete("{id}")]
     public IActionResult DeleteCategory(int id)
     {
-        var category = _context.ListCategories.FirstOrDefault(category =>
+        var category = _context.Categories.FirstOrDefault(category =>
         category._id == id);
         if (category == null) 
             return NotFound();
