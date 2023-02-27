@@ -4,9 +4,6 @@ namespace olxApi.Dtos;
 
 public class UpdateCategoryDto
 {
-    [Key]
-    public int _id { get; set; }
-    
     [Required]
     [MaxLength(50)]
     public string name { get; set; }

@@ -5,6 +5,7 @@ public class Category
 {
        // category has a 3 elements _id, name and slug
     [Key]
+    [Required]
     public int _id { get; set; }
     
     [Required]

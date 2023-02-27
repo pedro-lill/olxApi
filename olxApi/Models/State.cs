@@ -9,12 +9,13 @@ public class State
     /// State id
     /// </summary>
     [Key]
-    public string _id { get; set; }
+    [Required]
+    public int _id { get; set; }
 
     /// <summary>
     /// State name
     /// </summary>
     [Required]
     [MaxLength(50)]
-    public string name { get; set; }
+    public string? name { get; set; }
 }

@@ -40,29 +40,14 @@ namespace olxApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("idCat")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("idState")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
-
-                    b.Property<string>("idUser")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<double>("price")
                         .HasColumnType("double precision");
 
                     b.Property<bool>("priceNeg")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("state_id")
-                        .IsRequired()
-                        .HasColumnType("character varying(50)");
+                    b.Property<int>("state_id")
+                        .HasColumnType("integer");
 
                     b.Property<string>("status")
                         .IsRequired()
@@ -115,9 +100,11 @@ namespace olxApi.Migrations
 
             modelBuilder.Entity("olxApi.Models.State", b =>
                 {
-                    b.Property<string>("_id")
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                    b.Property<int>("_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("_id"));
 
                     b.Property<string>("name")
                         .IsRequired()

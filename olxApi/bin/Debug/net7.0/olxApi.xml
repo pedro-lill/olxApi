@@ -4,6 +4,11 @@
         <name>olxApi</name>
     </assembly>
     <members>
+        <member name="T:olxApi.Controllers.anuncioController">
+            <summary>
+            Anuncio Controller
+            </summary>
+        </member>
         <member name="M:olxApi.Controllers.anuncioController.#ctor(olxApi.Data.OlxContext,AutoMapper.IMapper)">
             <summary>
             Anuncio Controller
@@ -129,9 +134,89 @@
             Categories
             </summary>
         </member>
+        <member name="T:olxApi.Dtos.CreateCategoryDto">
+            <summary>
+            The category's data transfer object
+            </summary>
+        </member>
+        <member name="T:olxApi.Dtos.CreateStateDto">
+            <summary>
+            The state's data transfer object
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateStateDto.name">
+            <summary>
+            The state's name
+            </summary>
+        </member>
+        <member name="T:olxApi.Dtos.CreateUserDto">
+            <summary>
+            The user's data transfer object
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateUserDto.name">
+            <summary>
+            The user's name
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateUserDto.email">
+            <summary>
+            The user's email
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateUserDto.state">
+            <summary>
+            The user's state
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateUserDto.password">
+            <summary>
+            The user's password
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.CreateUserDto.token">
+            <summary>
+            The user's token
+            </summary>
+        </member>
+        <member name="T:olxApi.Dtos.ReadCategoryDto">
+            <summary>
+            The category's data transfer object
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.ReadCategoryDto.name">
+            <summary>
+            The category's name
+            </summary>
+        </member>
+        <member name="T:olxApi.Dtos.ReadStateDto">
+            <summary>
+            The state's data transfer object
+            </summary>
+        </member>
+        <member name="P:olxApi.Dtos.ReadStateDto.name">
+            <summary>
+            The state's name
+            </summary>
+        </member>
         <member name="T:olxApi.Dtos.UpdateAnuncioDto">
             <summary>
             Dto to create a new Anuncio
+            </summary>
+        </member>
+        <member name="T:olxApi.Models.State">
+            <summary>
+            State model
+            </summary>
+        </member>
+        <member name="P:olxApi.Models.State._id">
+            <summary>
+            State id
+            </summary>
+        </member>
+        <member name="P:olxApi.Models.State.name">
+            <summary>
+            State name
             </summary>
         </member>
     </members>

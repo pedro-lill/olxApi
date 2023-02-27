@@ -9,20 +9,6 @@ public class Anuncio
     public int _id { get; set; }
 
     [Required]
-    [ForeignKey("User")]
-    public string idUser { get; set; }
-
-    [Required]
-    [ForeignKey("State")]
-    [StringLength(50, ErrorMessage ="O nome do estado deve ter no máximo 50 caracteres")]
-    public string idState { get; set; }
-
-    [Required]
-    [ForeignKey("Category")]
-    [StringLength(50, ErrorMessage ="O nome da categoria deve ter no máximo 50 caracteres")]
-    public string idCat { get; set; }
-
-    [Required]
     public DateTime dateCreated { get; set; } 
 
     [Required]
@@ -43,6 +29,15 @@ public class Anuncio
 
     [Required]
     public string status { get; set; }
+
+    public int category_id { get; set; } // essa propriedade representa a foreign key
+
+    public int state_id { get; set; } // essa propriedade representa a foreign key
+
+    public int user_id { get; set; } // essa propriedade representa a foreign key
+
+    
+
 
     public Category category { get; set; }
     public State state { get; set; }

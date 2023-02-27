@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.JsonPatch;
 
 namespace olxApi.Controllers;
 
+/// <summary>
+/// Anuncio Controller
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 public class anuncioController : ControllerBase

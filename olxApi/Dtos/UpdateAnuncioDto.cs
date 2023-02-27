@@ -7,17 +7,20 @@ namespace olxApi.Dtos;
 /// </summary>
 public class UpdateAnuncioDto
 {
+    [ForeignKey("User")]
     [Required]
     [Display(Name = "Id do usuário")]
-    public string idUser { get; set; }
+    public string user_id { get; set; }
     
+    [ForeignKey("State")]
     [Required]
     [StringLength(50, ErrorMessage ="O nome do estado deve ter no máximo 50 caracteres")]
-    public string idState { get; set; }
+    public string state_id { get; set; }
 
+    [ForeignKey("Category")]
     [Required]
     [StringLength(50, ErrorMessage ="O nome da categoria deve ter no máximo 50 caracteres")]
-    public string idCat { get; set; }
+    public string category_id { get; set; }
 
     [Required]
     public DateTime dateCreated { get; set; } 
