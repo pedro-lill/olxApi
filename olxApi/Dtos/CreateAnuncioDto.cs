@@ -5,15 +5,15 @@ namespace olxApi.Dtos;
 
 public class CreateAnuncioDto
 {
-    [ForeignKey("User")]
+    [ForeignKey("user_id")]
     [Required]
     public int user_id { get; set; }
 
-    [ForeignKey("State")]
+    [ForeignKey("state_id")]
     [Required]
     public int state_id { get; set; }
 
-    [ForeignKey("Category")]
+    [ForeignKey("category_id")]
     [Required]
     public int category_id { get; set; }
 

@@ -10,23 +10,19 @@ public class User
 
     [Required]
     [StringLength(50, ErrorMessage ="O nome deve ter no máximo 100 caracteres")]
-    public string name { get; set; }
+    public string? name { get; set; }
 
-    // email validation. check later
     [Required]
     [EmailAddress]
     [Display(Name = "Email")]
     //[RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Email is not valid")]
-    public string email { get; set; }
-
+    public string? email { get; set; }
     [Required]
-    [StringLength(50, ErrorMessage ="O nome do estado deve ter no máximo 50 caracteres")]
-    public string state { get; set; }
+    public string? password { get; set; }
 
-    [Required]
-    // password validation. check later
-    public string password { get; set; }
+    public string? token { get; set; }
 
-    [Required]
-    public string token { get; set; }
+    public int state_id { get; set; }
+
+    public State state { get; set;}
 }

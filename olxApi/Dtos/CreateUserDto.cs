@@ -25,7 +25,7 @@ public class CreateUserDto
     /// The user's state
     /// </summary>
     [Required]
-    public string? state { get; set; }
+    public int state_id { get; set; }
 
     /// <summary>
     /// The user's password

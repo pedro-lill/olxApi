@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using olxApi.Data;
@@ -11,9 +12,10 @@ using olxApi.Data;
 namespace olxApi.Migrations
 {
     [DbContext(typeof(OlxContext))]
-    partial class OlxContextModelSnapshot : ModelSnapshot
+    [Migration("20230303143114_olxMigra")]
+    partial class olxMigra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

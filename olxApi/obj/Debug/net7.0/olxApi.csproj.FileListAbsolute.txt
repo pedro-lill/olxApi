@@ -82,12 +82,10 @@
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Microsoft.OpenApi.dll
-/home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/MySqlConnector.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Newtonsoft.Json.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Newtonsoft.Json.Bson.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Npgsql.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
-/home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -102,3 +100,4 @@
 /home/desbravador/Documents/newapi/olxApi/olxApi/obj/Debug/net7.0/olxApi.csproj.CopyComplete
 /home/desbravador/Documents/newapi/olxApi/olxApi/obj/Debug/net7.0/olxApi.genruntimeconfig.cache
 /home/desbravador/Documents/newapi/olxApi/olxApi/obj/Debug/net7.0/ref/olxApi.dll
+/home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/BCrypt.Net.dll

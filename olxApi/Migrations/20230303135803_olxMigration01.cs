@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace olxApi.Migrations
 {
-    public partial class olxmigration01 : Migration
+    public partial class olxMigration01 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,13 +45,19 @@ namespace olxApi.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     email = table.Column<string>(type: "text", nullable: false),
-                    state = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     password = table.Column<string>(type: "text", nullable: false),
-                    token = table.Column<string>(type: "text", nullable: false)
+                    token = table.Column<string>(type: "text", nullable: true),
+                    state_id = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x._id);
+                    table.ForeignKey(
+                        name: "FK_Users_States_state_id",
+                        column: x => x.state_id,
+                        principalTable: "States",
+                        principalColumn: "_id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -94,6 +100,27 @@ namespace olxApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Images",
+                columns: table => new
+                {
+                    _id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    url = table.Column<string>(type: "text", nullable: false),
+                    isDefault = table.Column<bool>(type: "boolean", nullable: false),
+                    anuncio_id = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Images", x => x._id);
+                    table.ForeignKey(
+                        name: "FK_Images_Anuncios_anuncio_id",
+                        column: x => x.anuncio_id,
+                        principalTable: "Anuncios",
+                        principalColumn: "_id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Anuncios_category_id",
                 table: "Anuncios",
@@ -108,10 +135,23 @@ namespace olxApi.Migrations
                 name: "IX_Anuncios_user_id",
                 table: "Anuncios",
                 column: "user_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Images_anuncio_id",
+                table: "Images",
+                column: "anuncio_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_state_id",
+                table: "Users",
+                column: "state_id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Images");
+
             migrationBuilder.DropTable(
                 name: "Anuncios");
 
@@ -119,10 +159,10 @@ namespace olxApi.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "States");
+                name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "States");
         }
     }
 }

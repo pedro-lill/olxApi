@@ -19,7 +19,8 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddEndpointsApiExplorer();
- builder.Services.AddSwaggerGen(c =>
+
+builder.Services.AddSwaggerGen(c =>
  {
      c.SwaggerDoc("v1", new OpenApiInfo { Title = "olxApi", Version = "v1" });
      var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -29,12 +30,19 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
+//configure a validation with middleware
+app.UseMiddleware<AuthMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
+
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
 
 app.UseHttpsRedirection();
 

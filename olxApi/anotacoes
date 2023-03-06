@@ -108,3 +108,40 @@ O verbo DELETE deve ser utilizado quando queremos deletar um recurso no sistema.
 Quando um recurso é atualizado ou removido com sucesso, devemos retornar status 204 (No Content).
 
 O Swagger auxilia o processo de entendimento sobre uma rota, seus parâmetros e retornos.''
+
+
+    ------------------              28/02/2023          ------------------
+
+Aqui você tem três níveis de blocos de código, começando do bloco de código mais interno e trabalhando para fora:
+
+um métodoMain()
+uma aulaProgram
+um espaço de nomesMyNewApp
+
+Um método é um bloco de código que é uma unidade de execução. Em outras palavras, uma vez que o método é chamado pelo seu nome, todo o método será executado até que:
+
+o tempo de execução encontra a returnpalavra-chave ou
+o tempo de execução encontra uma exceção e não pode continuar, ou
+o tempo de execução executa com êxito cada linha de código no método.
+
+-> Os blocos de código definem estruturas de nível superior, como namespaces, classes e métodos.
+-> Assim como os blocos de código afetam a visibilidade de variáveis definidas dentro de estruturas de nível inferior, 
+ como instruções de decisão e iteração, os blocos de código também afetam a visibilidade de métodos entre classes e classes entre namespaces.
+-> Você pode adicionar a usinginstrução aos arquivos de código para instruir o compilador onde procurar referências a classes.
+
+ Microsoft recomenda que você considere estas convenções:
+
+->Nunca use formulário de linha única (por exemplo: if (flag) Console.WriteLine(flag);
+->O uso de colchetes é sempre aceito e obrigatório se qualquer bloco de uma instrução composta if/else if/.../else 
+ usar colchetes ou se um único corpo de instrução abranger várias linhas.
+->As chaves podem ser omitidas apenas se o corpo de cada bloco associado a uma instrução composta if/else if/.../else for colocada em uma única linha.
+
+   
+   Guid.NewGuid().ToString();
+
+    O Guid.NewGuid()método retorna um novo GUID único.
+    Um GUID é um número de 128 bits que é garantido para ser único
+     em todo o mundo, e é frequentemente usado 
+     para identificar de forma exclusiva recursos 
+     em sistemas distribuídos.
+

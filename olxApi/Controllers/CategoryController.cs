@@ -11,7 +11,7 @@ namespace olxApi.Controllers;
 /// Category Controller
 /// </summary>
 [ApiController]
-[Route("[controller]")]
+[Route("categories")]
 public class categoryController : ControllerBase
     {
 
@@ -128,3 +128,5 @@ public class categoryController : ControllerBase
         return NoContent();
     }
 }
+
+    

@@ -28,16 +28,13 @@ public class Anuncio
     public int views { get; set; }
 
     [Required]
-    public string status { get; set; }
+    public string? status { get; set; }
 
     public int category_id { get; set; } // essa propriedade representa a foreign key
 
     public int state_id { get; set; } // essa propriedade representa a foreign key
 
     public int user_id { get; set; } // essa propriedade representa a foreign key
-
-    
-
 
     public Category category { get; set; }
     public State state { get; set; }

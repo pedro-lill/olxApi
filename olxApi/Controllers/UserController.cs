@@ -4,11 +4,12 @@ using olxApi.Data;
 using olxApi.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
+using BCrypt.Net;
 
 namespace olxApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("user")]
 
 /// <summary>
 /// User Controller
@@ -27,11 +28,13 @@ public class userController : ControllerBase
     /// Create a new User
     /// </summary>
     [HttpPost]
+    [Route("signup")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     public IActionResult addUser(
         [FromBody] CreateUserDto userDto)
         {
             User user = _mapper.Map<User>(userDto);
+            user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
             _context.Users.Add(user);
             _context.SaveChanges();
             return CreatedAtAction(nameof(RetriveUserById), 
@@ -56,6 +59,30 @@ public class userController : ControllerBase
         _context.SaveChanges();
         return NoContent();
     }
+
+
+    /// <summary>
+    /// login
+    /// </summary>
+    [HttpPost("signin")]
+    public IActionResult Logar([FromBody] LoginUserDto login)
+    {
+        var user = _context.Users.FirstOrDefault(user =>
+            user.email == login.email);
+        if (user == null)
+        {
+            return BadRequest(new { error = "User or password not found" });
+        }
+        if (BCrypt.Net.BCrypt.Verify(login.password, user.password))
+        {
+            user.token = Guid.NewGuid().ToString();
+            _context.SaveChanges();
+            user.password = null;
+            return Ok(new { token = user.token });
+        }
+        return BadRequest(new { error = "User or password not Found" });
+    }
+
 
     /// <summary>
     /// Get all Users

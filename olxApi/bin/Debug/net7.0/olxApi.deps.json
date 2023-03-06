@@ -9,12 +9,12 @@
       "olxApi/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.1.0",
+          "BCrypt-Official": "0.1.109",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "7.0.2",
           "Microsoft.AspNetCore.OpenApi": "7.0.2",
           "Microsoft.EntityFrameworkCore": "6.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.10",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "6.0.2",
-          "Pomelo.EntityFrameworkCore.MySql": "6.0.2",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -48,6 +48,14 @@
           "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "1.1.0.0",
             "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "BCrypt-Official/0.1.109": {
+        "runtime": {
+          "lib/BCrypt.Net.dll": {
+            "assemblyVersion": "0.1.5073.29922",
+            "fileVersion": "0.1.0.0"
           }
         }
       },
@@ -249,14 +257,6 @@
           "System.Runtime": "4.1.0"
         }
       },
-      "MySqlConnector/2.1.2": {
-        "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.1.2.0"
-          }
-        }
-      },
       "NETStandard.Library/1.6.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.0.1",
@@ -344,19 +344,6 @@
         },
         "runtime": {
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
-            "assemblyVersion": "6.0.2.0",
-            "fileVersion": "6.0.2.0"
-          }
-        }
-      },
-      "Pomelo.EntityFrameworkCore.MySql/6.0.2": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "6.0.10",
-          "Microsoft.Extensions.DependencyInjection": "6.0.1",
-          "MySqlConnector": "2.1.2"
-        },
-        "runtime": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
             "assemblyVersion": "6.0.2.0",
             "fileVersion": "6.0.2.0"
           }
@@ -1095,6 +1082,13 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/1.1.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.1.1.0.nupkg.sha512"
     },
+    "BCrypt-Official/0.1.109": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4iTKqcCn1Eb3fsbbjhv9d9bwswCvEwXavwwo+XTrYAGCfP1YfVZGmRybKWLf2A6BDh+9bZn4zK6AnQaNcqtraA==",
+      "path": "bcrypt-official/0.1.109",
+      "hashPath": "bcrypt-official.0.1.109.nupkg.sha512"
+    },
     "Humanizer.Core/2.8.26": {
       "type": "package",
       "serviceable": true,
@@ -1284,13 +1278,6 @@
       "path": "microsoft.win32.primitives/4.0.1",
       "hashPath": "microsoft.win32.primitives.4.0.1.nupkg.sha512"
     },
-    "MySqlConnector/2.1.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-JVokQTUNN3WHAu9Vw8ieeq1dXTFokJiig5P0VJ4f439UxRrsPo6SaVWC8Zdm6mkPeQFhZ0/9afdWa02EY/1j/w==",
-      "path": "mysqlconnector/2.1.2",
-      "hashPath": "mysqlconnector.2.1.2.nupkg.sha512"
-    },
     "NETStandard.Library/1.6.0": {
       "type": "package",
       "serviceable": true,
@@ -1325,13 +1312,6 @@
       "sha512": "sha512-2snTLONAs26dKdtInX4CAorkE//eDMOAVifh2EXZ/REzq5typb7MkENIix3Ma6ycukmAzCUw+br2AFdXmkmxbw==",
       "path": "npgsql.entityframeworkcore.postgresql/6.0.2",
       "hashPath": "npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512"
-    },
-    "Pomelo.EntityFrameworkCore.MySql/6.0.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-KvlZ800CnEuEGnxj5OT1fCKGjQXxW5kpPlCP91JqBYG+2Z3927eqXmlX6LLKUt4swqE8ZsEQ+Zkpab8bqstf4g==",
-      "path": "pomelo.entityframeworkcore.mysql/6.0.2",
-      "hashPath": "pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512"
     },
     "runtime.native.System/4.0.0": {
       "type": "package",

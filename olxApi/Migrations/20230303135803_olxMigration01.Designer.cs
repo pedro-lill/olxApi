@@ -12,8 +12,8 @@ using olxApi.Data;
 namespace olxApi.Migrations
 {
     [DbContext(typeof(OlxContext))]
-    [Migration("20230224143653_olxmigration01")]
-    partial class olxmigration01
+    [Migration("20230303135803_olxMigration01")]
+    partial class olxMigration01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,6 +100,31 @@ namespace olxApi.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("olxApi.Models.Image", b =>
+                {
+                    b.Property<int>("_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("_id"));
+
+                    b.Property<int>("anuncio_id")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("isDefault")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("url")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("_id");
+
+                    b.HasIndex("anuncio_id");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("olxApi.Models.State", b =>
                 {
                     b.Property<int>("_id")
@@ -139,16 +164,15 @@ namespace olxApi.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("state")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                    b.Property<int>("state_id")
+                        .HasColumnType("integer");
 
                     b.Property<string>("token")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("_id");
+
+                    b.HasIndex("state_id");
 
                     b.ToTable("Users");
                 });
@@ -178,6 +202,28 @@ namespace olxApi.Migrations
                     b.Navigation("state");
 
                     b.Navigation("user");
+                });
+
+            modelBuilder.Entity("olxApi.Models.Image", b =>
+                {
+                    b.HasOne("olxApi.Models.Anuncio", "anuncio")
+                        .WithMany()
+                        .HasForeignKey("anuncio_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("anuncio");
+                });
+
+            modelBuilder.Entity("olxApi.Models.User", b =>
+                {
+                    b.HasOne("olxApi.Models.State", "state")
+                        .WithMany()
+                        .HasForeignKey("state_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("state");
                 });
 #pragma warning restore 612, 618
         }

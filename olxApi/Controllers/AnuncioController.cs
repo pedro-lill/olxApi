@@ -4,6 +4,7 @@ using olxApi.Data;
 using olxApi.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Cors;
 
 namespace olxApi.Controllers;
 
@@ -11,7 +12,8 @@ namespace olxApi.Controllers;
 /// Anuncio Controller
 /// </summary>
 [ApiController]
-[Route("[controller]")]
+[Route("ad")]
+
 public class anuncioController : ControllerBase
     {
         private OlxContext _context;
@@ -29,7 +31,7 @@ public class anuncioController : ControllerBase
     /// Create a new Anuncio
     /// </summary>
     [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
+    [Route("add")]
     public IActionResult addAnuncio(
         [FromBody] CreateAnuncioDto anuncioDto)
         {
@@ -48,7 +50,7 @@ public class anuncioController : ControllerBase
                 throw;
             }
         }
-    
+
     /// <summary>
     /// Update a Anuncio
     /// </summary>
@@ -71,14 +73,15 @@ public class anuncioController : ControllerBase
     /// Get all Anuncios
     /// </summary>
     [HttpGet]
+    [Route("list")]
     public IEnumerable <ReadAnuncioDto> GetAllAnuncios(
-            [FromQuery] int skip=0, [FromQuery] int take =30)
+            [FromQuery] string sort = "desc", [FromQuery] int limit =30)
         {
             return _mapper.Map<List<ReadAnuncioDto>>(
-                _context.Anuncios.Skip(skip).Take(take));
+                _context.Anuncios.OrderByDescending(anuncio => anuncio._id).Take(limit));
         } 
 
-    /// <summary>
+      /// <summary>
     /// Get Anuncio by Id
     /// </summary>
     [HttpGet("{id}")]
@@ -89,8 +92,24 @@ public class anuncioController : ControllerBase
         {
             return NotFound();
         }
-        var anuncioDto = _mapper.Map<ReadAnuncioDto>(anuncio);
-        return Ok(anuncioDto);
+        return Ok(_mapper.Map<ReadAnuncioDto>(anuncio));
+    }
+
+
+
+    /// <summary>
+    /// Get others ads from user_id
+    /// </summary>
+    [HttpGet("{id, other}")]
+    public IEnumerable <ReadAnuncioDto> GetOthersAds(int id)
+    {
+        var anuncio = _context.Anuncios.FirstOrDefault(anuncio => anuncio._id == id);
+        if (anuncio == null)
+        {
+            return (IEnumerable<ReadAnuncioDto>)NotFound();
+        }
+        return _mapper.Map<List<ReadAnuncioDto>>(
+                _context.Anuncios.Where(anuncio => anuncio.user_id == anuncio.user_id));
     }
 
     /// <summary>

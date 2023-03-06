@@ -15,11 +15,11 @@ public class UpdateUserDto
 
     [Required]
     [StringLength(50, ErrorMessage ="O nome do estado deve ter no máximo 50 caracteres")]
-    public string? state { get; set; }
+    public int state_id { get; set; }
 
     [Required]
     // password validation. check later
-    public string password { get; set; }
+    public string? password { get; set; }
 
     [Required]
     public string token { get; set; }

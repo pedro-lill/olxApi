@@ -38,6 +38,15 @@
           "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "BCrypt-Official/0.1.109": {
+        "type": "package",
+        "compile": {
+          "lib/BCrypt.Net.dll": {}
+        },
+        "runtime": {
+          "lib/BCrypt.Net.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -463,19 +472,6 @@
           }
         }
       },
-      "MySqlConnector/2.1.2": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/MySqlConnector.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "NETStandard.Library/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -583,24 +579,6 @@
         },
         "runtime": {
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
-        }
-      },
-      "Pomelo.EntityFrameworkCore.MySql/6.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Relational": "[6.0.7, 7.0.0)",
-          "Microsoft.Extensions.DependencyInjection": "6.0.0",
-          "MySqlConnector": "2.1.2"
-        },
-        "compile": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll": {
-            "related": ".xml"
-          }
         }
       },
       "runtime.native.System/4.0.0": {
@@ -1963,6 +1941,21 @@
         "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
+    "BCrypt-Official/0.1.109": {
+      "sha512": "4iTKqcCn1Eb3fsbbjhv9d9bwswCvEwXavwwo+XTrYAGCfP1YfVZGmRybKWLf2A6BDh+9bZn4zK6AnQaNcqtraA==",
+      "type": "package",
+      "path": "bcrypt-official/0.1.109",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt-official.0.1.109.nupkg.sha512",
+        "bcrypt-official.nuspec",
+        "content/LICENSE.txt",
+        "lib/BCrypt.Net.XML",
+        "lib/BCrypt.Net.dll",
+        "lib/BCrypt.Net.pdb"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -2759,35 +2752,6 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "MySqlConnector/2.1.2": {
-      "sha512": "JVokQTUNN3WHAu9Vw8ieeq1dXTFokJiig5P0VJ4f439UxRrsPo6SaVWC8Zdm6mkPeQFhZ0/9afdWa02EY/1j/w==",
-      "type": "package",
-      "path": "mysqlconnector/2.1.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net45/MySqlConnector.dll",
-        "lib/net45/MySqlConnector.xml",
-        "lib/net461/MySqlConnector.dll",
-        "lib/net461/MySqlConnector.xml",
-        "lib/net471/MySqlConnector.dll",
-        "lib/net471/MySqlConnector.xml",
-        "lib/net5.0/MySqlConnector.dll",
-        "lib/net5.0/MySqlConnector.xml",
-        "lib/net6.0/MySqlConnector.dll",
-        "lib/net6.0/MySqlConnector.xml",
-        "lib/netcoreapp3.1/MySqlConnector.dll",
-        "lib/netcoreapp3.1/MySqlConnector.xml",
-        "lib/netstandard2.0/MySqlConnector.dll",
-        "lib/netstandard2.0/MySqlConnector.xml",
-        "lib/netstandard2.1/MySqlConnector.dll",
-        "lib/netstandard2.1/MySqlConnector.xml",
-        "logo.png",
-        "mysqlconnector.2.1.2.nupkg.sha512",
-        "mysqlconnector.nuspec"
-      ]
-    },
     "NETStandard.Library/1.6.0": {
       "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
       "type": "package",
@@ -2884,20 +2848,6 @@
         "npgsql.entityframeworkcore.postgresql.6.0.2.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
-      ]
-    },
-    "Pomelo.EntityFrameworkCore.MySql/6.0.2": {
-      "sha512": "KvlZ800CnEuEGnxj5OT1fCKGjQXxW5kpPlCP91JqBYG+2Z3927eqXmlX6LLKUt4swqE8ZsEQ+Zkpab8bqstf4g==",
-      "type": "package",
-      "path": "pomelo.entityframeworkcore.mysql/6.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "icon.png",
-        "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.dll",
-        "lib/net6.0/Pomelo.EntityFrameworkCore.MySql.xml",
-        "pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
-        "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -6380,12 +6330,12 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection",
+      "BCrypt-Official >= 0.1.109",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 7.0.2",
       "Microsoft.AspNetCore.OpenApi >= 7.0.2",
       "Microsoft.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.2",
-      "Pomelo.EntityFrameworkCore.MySql >= 6.0.2",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -6430,6 +6380,10 @@
             "target": "Package",
             "version": "(, )"
           },
+          "BCrypt-Official": {
+            "target": "Package",
+            "version": "[0.1.109, )"
+          },
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
             "target": "Package",
             "version": "[7.0.2, )"
@@ -6449,10 +6403,6 @@
             "version": "[6.0.10, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
-            "target": "Package",
-            "version": "[6.0.2, )"
-          },
-          "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
             "version": "[6.0.2, )"
           },
@@ -6493,6 +6443,16 @@
       "libraryId": "AutoMapper.Extensions.Microsoft.DependencyInjection",
       "targetGraphs": [
         ".NETCoreApp,Version=v7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt-Official 0.1.109' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt-Official",
+      "targetGraphs": [
+        "net7.0"
       ]
     }
   ]
