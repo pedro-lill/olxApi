@@ -8,9 +8,9 @@ public class ImagesProfile : Profile
 {
    public ImagesProfile()
    {
-        CreateMap<CreateImagesDto, Image>();
-        CreateMap<UpdateImagesDto, Image>();
-        CreateMap<Image, UpdateImagesDto>();
-        CreateMap<Image, ReadImagesDto>();
+        CreateMap<CreateImageDto, Image>();
+        CreateMap<UpdateImageDto, Image>();
+        CreateMap<Image, UpdateImageDto>();
+        CreateMap<Image, ReadImageDto>();
    } 
 }

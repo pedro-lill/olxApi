@@ -24,5 +24,5 @@ public class User
 
     public int state_id { get; set; }
 
-    public State state { get; set;}
+    public State ?state { get; set;}
 }
