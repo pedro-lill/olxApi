@@ -4,16 +4,12 @@ using olxApi.Data;
 using olxApi.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
-using BCrypt.Net;
+using Newtonsoft.Json;
 
 namespace olxApi.Controllers;
 
 [ApiController]
 [Route("user")]
-
-/// <summary>
-/// User Controller
-/// </summary>
 public class userController : ControllerBase
     {
         private OlxContext _context;
@@ -23,44 +19,23 @@ public class userController : ControllerBase
         _context = context;
         _mapper = mapper;
     }
-    
+
     /// <summary>
-    /// Create a new User
+    /// create a User (cadastrando um usuário)
     /// </summary>
     [HttpPost]
     [Route("signup")]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    public IActionResult addUser(
+    public IActionResult Cadastrar(
         [FromBody] CreateUserDto userDto)
-        {
-            User user = _mapper.Map<User>(userDto);
-            user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
-            _context.Users.Add(user);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(RetriveUserById), 
-                new { id = user._id }, 
-                user);
-        }
-    
-    /// <summary>
-    /// Update a User
-    /// </summary>
-    [HttpPut("{id}")]
-    public IActionResult UpdateUser(int id,
-        [FromBody] UpdateUserDto anuncioDto)
     {
-        var anuncio = _context.Users.FirstOrDefault(anuncio =>
-            anuncio._id == id);
-        if (anuncio == null)
-        {
-            return NotFound();
-        }
-        _mapper.Map(anuncioDto, anuncio);
+        var user = _mapper.Map<User>(userDto);
+        user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
+        user.token = Guid.NewGuid().ToString();
+        _context.Users.Add(user);
         _context.SaveChanges();
-        return NoContent();
+        return Ok(new { token = user.token });
     }
-
-
+    
     /// <summary>
     /// login
     /// </summary>
@@ -83,7 +58,6 @@ public class userController : ControllerBase
         return BadRequest(new { error = "User or password not Found" });
     }
 
-
     /// <summary>
     /// Get all Users
     /// </summary>
@@ -93,43 +67,43 @@ public class userController : ControllerBase
         {
             return _mapper.Map<List<ReadUserDto>>(
                 _context.Users.Skip(skip).Take(take));
-        } 
+        }
+
+    //get a user by token
+    [HttpGet]
+    [Route("me")]
+    public IActionResult RetrieveUserByToken(string token)
+    {
+        var user = _context.Users.FirstOrDefault(user =>
+        user.token == token);
+        if (user == null)
+            return NotFound();
+        user.state = _context.States.FirstOrDefault(state => state._id == user.state_id);
+        return Ok(_mapper.Map<ReadUserDto>(user));
+    }
 
     /// <summary>
-    /// Get a User by id
+    /// update a User or partial update with token parameter
     /// </summary>
-    [HttpGet("{id}")]
-    public IActionResult RetriveUserById(int id)
+    [HttpPut]
+    [Route("me")]
+    public IActionResult UpdateUser(
+        [FromBody] UpdateUserDto userDto)
     {
-        var anuncio = _context.Users.FirstOrDefault(anuncio => anuncio._id == id);
-        if (anuncio == null)
+        var user = _context.Users.FirstOrDefault(user =>
+            user.token == userDto.token);
+        if (user == null)
         {
             return NotFound();
         }
-        var anuncioDto = _mapper.Map<ReadUserDto>(anuncio);
-        return Ok(anuncioDto);
-    }
-
-    /// <summary>
-    /// Partially update a User
-    /// </summary>
-    [HttpPatch("{id}")]
-    public IActionResult PartialUserUpdate(int id,
-        JsonPatchDocument<UpdateUserDto> patchDoc)
-    {
-        var anuncio = _context.Users.FirstOrDefault(anuncio =>
-        anuncio._id == id);
-        if (anuncio == null)
-            return NotFound();
-        var anuncioToPatch = _mapper.Map<UpdateUserDto>(anuncio);
-
-        patchDoc.ApplyTo(anuncioToPatch, ModelState);
-        if (!TryValidateModel(anuncioToPatch))
-            return ValidationProblem(ModelState);
-        _mapper.Map(anuncioToPatch, anuncio);
+        //define old email if a new one is not informed
+        if (userDto.email == null) userDto.email = user.email;
+        _mapper.Map(userDto, user);
+        user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
         _context.SaveChanges();
         return NoContent();
     }
+
 
     /// <summary>
     /// Delete a User
@@ -137,11 +111,11 @@ public class userController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteUser(int id)
     {
-        var anuncio = _context.Users.FirstOrDefault(anuncio =>
-        anuncio._id == id);
-        if (anuncio == null) 
+        var user = _context.Users.FirstOrDefault(user =>
+        user._id == id);
+        if (user == null)
             return NotFound();
-        _context.Remove(anuncio);
+        _context.Users.Remove(user);
         _context.SaveChanges();
         return NoContent();
     }

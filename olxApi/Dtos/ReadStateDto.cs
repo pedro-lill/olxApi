@@ -5,8 +5,6 @@ namespace olxApi.Dtos;
 /// </summary>
 public class ReadStateDto
 {
-    /// <summary>
-    /// The state's name
-    /// </summary>
+    public int _id { get; set; }
     public string? name { get; set; }
  }

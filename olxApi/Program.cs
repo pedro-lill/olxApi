@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 
 builder.Services.AddEndpointsApiExplorer();
 
+
 builder.Services.AddSwaggerGen(c =>
  {
      c.SwaggerDoc("v1", new OpenApiInfo { Title = "olxApi", Version = "v1" });
@@ -30,8 +32,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-//configure a validation with middleware
-app.UseMiddleware<AuthMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -43,6 +43,8 @@ if (app.Environment.IsDevelopment())
 app.UseRouting();
 
 app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

@@ -101,7 +101,8 @@ O verbo PUT pode ser utilizado quando queremos atualizar algum recurso no sistem
 
 O verbo PATCH também pode ser utilizado para atualizações, porém de maneira parcial.
 
-Apesar do verbo PATCH não exigir a passagem completa do objeto a ser atualizado, exige uma configuração mais complexa.
+Apesar do verbo PATCH não exigir a passagem completa do objeto a ser atualizado, 
+exige uma configuração mais complexa.
 
 O verbo DELETE deve ser utilizado quando queremos deletar um recurso no sistema.
 
@@ -145,3 +146,47 @@ o tempo de execução executa com êxito cada linha de código no método.
      para identificar de forma exclusiva recursos 
      em sistemas distribuídos.
 
+// [HttpPost]
+    // [Route("add")]
+    // public async Task <IActionResult> addAnuncio(
+    //     [FromBody] CreateAnuncioDto anuncioDto, List<IFormFile> imagens)
+    //     {
+    //         try
+    //         {
+    //         Anuncio anuncio = _mapper.Map<Anuncio>(anuncioDto);
+    //         anuncio.img = new List<Image>();
+    //         foreach (var imagem in imagens)
+    //         {
+    //             var url = await SalvarImagem(imagem);
+    //             var image = new Image { url = url };
+    //             anuncio.img.Add(image);
+    //         }
+    //         // validar com middleware
+    //         _context.Anuncios.Add(anuncio);
+    //         _context.SaveChanges();
+    //         return CreatedAtAction(nameof(RetriveAdById), 
+    //             new { id = anuncio._id }, 
+    //             anuncio);
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             Console.WriteLine("error: " + e.Message);
+    //             throw;
+    //         }
+    //     }
+
+
+    private async Task<string> SalvarImagem(IFormFile imagem)
+    {
+        // Salva a imagem em um diretório no servidor e retorna a URL da imagem
+        // Exemplo de código para salvar a imagem:
+        
+        var fileName = Guid.NewGuid().ToString() + Path.GetExtension(imagem.FileName);
+        var filePath = Path.Combine("/Assets/Images/"+ fileName);
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await imagem.CopyToAsync(stream);
+        }
+        return $"http://localhost:5150/Assets/Images/{fileName}";
+     
+    }

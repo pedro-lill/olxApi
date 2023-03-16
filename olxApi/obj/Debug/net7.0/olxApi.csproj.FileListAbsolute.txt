@@ -101,3 +101,4 @@
 /home/desbravador/Documents/newapi/olxApi/olxApi/obj/Debug/net7.0/olxApi.genruntimeconfig.cache
 /home/desbravador/Documents/newapi/olxApi/olxApi/obj/Debug/net7.0/ref/olxApi.dll
 /home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/BCrypt.Net.dll
+/home/desbravador/Documents/newapi/olxApi/olxApi/bin/Debug/net7.0/olxApi.staticwebassets.runtime.json

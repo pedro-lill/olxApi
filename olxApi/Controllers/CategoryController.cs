@@ -36,7 +36,7 @@ public class categoryController : ControllerBase
             Category category = _mapper.Map<Category>(categoryDto);
             _context.Categories.Add(category);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(RetriveAdById), 
+            return CreatedAtAction(nameof(RetriveCategoryById), 
                 new { id = category._id }, 
                 category);
                 
@@ -48,40 +48,26 @@ public class categoryController : ControllerBase
             }
         }
         
-    /// <summary>
-    /// Update a Category
-    /// </summary>
-    [HttpPut("{id}")]
-    public IActionResult UpdateCategory(int id,
-        [FromBody] UpdateCategoryDto categoryDto)
-    {
-        var category = _context.Categories.FirstOrDefault(category =>
-            category._id == id);
-        if (category == null)
-        {
-            return NotFound();
-        }
-        _mapper.Map(categoryDto, category);
-        _context.SaveChanges();
-        return NoContent();
-    }
 
     /// <summary>
     /// Get all Categories
     /// </summary>
     [HttpGet]
-    public IEnumerable <ReadCategoryDto> GetAllCategories(
+    public IActionResult GetAllCategories(
             [FromQuery] int skip=0, [FromQuery] int take =30)
         {
-            return _mapper.Map<List<ReadCategoryDto>>(
-                _context.Categories.Skip(skip).Take(take));
+            
+            var categories =_mapper.Map<List<ReadCategoryDto>>(_context.Categories.Skip(skip).Take(take));
+        
+            return Ok(new {categories});
+        
         } 
 
     /// <summary>
     /// Get a Category by id
     /// </summary>
     [HttpGet("{id}")]
-    public IActionResult RetriveAdById(int id)
+    public IActionResult RetriveCategoryById(int id)
     {
         var category = _context.Categories.FirstOrDefault(category => category._id == id);
         if (category == null)

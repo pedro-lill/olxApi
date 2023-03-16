@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/845fcadd-d821-4496-8a69-f25f0c3ca9f0",
+      "PackagePath": "staticwebassets/Assets/Images"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/baby.png",
+      "PackagePath": "staticwebassets/Assets/Media/baby.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/cars.png",
+      "PackagePath": "staticwebassets/Assets/Media/cars.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/clothes.png",
+      "PackagePath": "staticwebassets/Assets/Media/clothes.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/electronics.png",
+      "PackagePath": "staticwebassets/Assets/Media/electronics.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/sports.png",
+      "PackagePath": "staticwebassets/Assets/Media/sports.png"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.olxApi.props",
+      "PackagePath": "build\\olxApi.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.olxApi.props",
+      "PackagePath": "buildMultiTargeting\\olxApi.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.olxApi.props",
+      "PackagePath": "buildTransitive\\olxApi.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.olxApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

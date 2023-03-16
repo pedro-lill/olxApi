@@ -5,8 +5,9 @@ namespace olxApi.Dtos;
 /// </summary>
 public class ReadCategoryDto
 {
-    /// <summary>
-    /// The category's name
-    /// </summary>
     public string? name { get; set; }
+
+    public string? slug { get; set; }
+
+    public string? img { get; set; }
 }

@@ -4,44 +4,14 @@
         <name>olxApi</name>
     </assembly>
     <members>
-        <member name="T:olxApi.Controllers.anuncioController">
+        <member name="M:olxApi.Controllers.anuncioController.GetAllAnuncios(System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
             <summary>
-            Anuncio Controller
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.#ctor(olxApi.Data.OlxContext,AutoMapper.IMapper)">
-            <summary>
-            Anuncio Controller
+            Get all Anuncios and filter by query with count
             </summary>
         </member>
         <member name="M:olxApi.Controllers.anuncioController.addAnuncio(olxApi.Dtos.CreateAnuncioDto)">
             <summary>
-            Create a new Anuncio
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.UpdateAnuncio(System.Int32,olxApi.Dtos.UpdateAnuncioDto)">
-            <summary>
-            Update a Anuncio
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.GetAllAnuncios(System.String,System.Int32)">
-            <summary>
-            Get all Anuncios
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.RetriveAdById(System.Int32)">
-            <summary>
-            Get Anuncio by Id
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.GetOthersAds(System.Int32)">
-            <summary>
-            Get others ads from user_id
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.anuncioController.PartialAnuncioUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{olxApi.Dtos.UpdateAnuncioDto})">
-            <summary>
-            Partially update a Anuncio
+            Get anuncio by id
             </summary>
         </member>
         <member name="M:olxApi.Controllers.anuncioController.DeleteAnuncio(System.Int32)">
@@ -59,17 +29,12 @@
             Create a new Category
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.categoryController.UpdateCategory(System.Int32,olxApi.Dtos.UpdateCategoryDto)">
-            <summary>
-            Update a Category
-            </summary>
-        </member>
         <member name="M:olxApi.Controllers.categoryController.GetAllCategories(System.Int32,System.Int32)">
             <summary>
             Get all Categories
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.categoryController.RetriveAdById(System.Int32)">
+        <member name="M:olxApi.Controllers.categoryController.RetriveCategoryById(System.Int32)">
             <summary>
             Get a Category by id
             </summary>
@@ -99,14 +64,14 @@
             get all states
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.userController.addUser(olxApi.Dtos.CreateUserDto)">
+        <member name="M:olxApi.Controllers.stateController.GetStateById(System.Int32)">
             <summary>
-            Create a new User
+            get state by id
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.userController.UpdateUser(System.Int32,olxApi.Dtos.UpdateUserDto)">
+        <member name="M:olxApi.Controllers.userController.Cadastrar(olxApi.Dtos.CreateUserDto)">
             <summary>
-            Update a User
+            create a User (cadastrando um usuário)
             </summary>
         </member>
         <member name="M:olxApi.Controllers.userController.Logar(olxApi.Dtos.LoginUserDto)">
@@ -119,14 +84,9 @@
             Get all Users
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.userController.RetriveUserById(System.Int32)">
+        <member name="M:olxApi.Controllers.userController.UpdateUser(olxApi.Dtos.UpdateUserDto)">
             <summary>
-            Get a User by id
-            </summary>
-        </member>
-        <member name="M:olxApi.Controllers.userController.PartialUserUpdate(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{olxApi.Dtos.UpdateUserDto})">
-            <summary>
-            Partially update a User
+            update a User or partial update with token parameter
             </summary>
         </member>
         <member name="M:olxApi.Controllers.userController.DeleteUser(System.Int32)">
@@ -149,37 +109,7 @@
             The state's name
             </summary>
         </member>
-        <member name="T:olxApi.Dtos.CreateUserDto">
-            <summary>
-            The user's data transfer object
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.CreateUserDto.name">
-            <summary>
-            The user's name
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.CreateUserDto.email">
-            <summary>
-            The user's email
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.CreateUserDto.state_id">
-            <summary>
-            The user's state
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.CreateUserDto.password">
-            <summary>
-            The user's password
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.CreateUserDto.token">
-            <summary>
-            The user's token
-            </summary>
-        </member>
-        <member name="T:olxApi.Dtos.CreateImagesDto">
+        <member name="T:olxApi.Dtos.CreateImageDto">
             <summary>
             The Images's data transfer object
             </summary>
@@ -194,19 +124,9 @@
             The category's data transfer object
             </summary>
         </member>
-        <member name="P:olxApi.Dtos.ReadCategoryDto.name">
-            <summary>
-            The category's name
-            </summary>
-        </member>
         <member name="T:olxApi.Dtos.ReadStateDto">
             <summary>
             The state's data transfer object
-            </summary>
-        </member>
-        <member name="P:olxApi.Dtos.ReadStateDto.name">
-            <summary>
-            The state's name
             </summary>
         </member>
         <member name="T:olxApi.Dtos.UpdateAnuncioDto">

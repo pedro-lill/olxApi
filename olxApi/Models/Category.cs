@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace olxApi.Models;
+
 
 public class Category
 {
@@ -10,9 +12,12 @@ public class Category
     
     [Required]
     [MaxLength(50)]
-    public string name { get; set; }
+    public string? name { get; set; }
 
     [Required]
     [MaxLength(50)]
-    public string slug { get; set; }
+    public string? slug { get; set; }
+
+    [NotMapped]
+    public string? img => $"http://localhost:5150/Assets/Media/{slug}.png";
 }
