@@ -8,12 +8,10 @@ public class Anuncio
     [Required]
     public int _id { get; set; }
 
-    [Required]
-    public DateTime dateCreated { get; set; } 
+    public DateTime dateCreated { get; set; } = DateTime.Now;
 
     [Required]
-    [StringLength(50, ErrorMessage ="O nome do titulo deve ter no máximo 50 caracteres")]
-    public string title { get; set; }
+    public string? title { get; set; }
 
     [Required]
     public double price { get; set; }
@@ -22,12 +20,10 @@ public class Anuncio
     public bool priceNeg { get; set; }
 
     [Required]
-    public string desc { get; set; }
+    public string? desc { get; set; }
 
-    [Required]
-    public int views { get; set; }
+    public int views { get; set; } = 0;
 
-    [Required]
     public string? status { get; set; }
 
     public int category_id { get; set; } // essa propriedade representa a foreign key
@@ -36,8 +32,10 @@ public class Anuncio
 
     public int user_id { get; set; } // essa propriedade representa a foreign key
 
-    public Category category { get; set; }
-    public State state { get; set; }
-    public User user { get; set; }
+    public virtual Category ?category { get; set; }
+    public virtual State ?state { get; set; }
+    public virtual User ?user { get; set; }
+    public virtual List<Image> ?images { get; set; }
+
 
 }

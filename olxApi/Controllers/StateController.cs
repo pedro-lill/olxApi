@@ -36,4 +36,18 @@ public class stateController : ControllerBase
         return _mapper.Map<IEnumerable<ReadStateDto>>(_context.States);
     }
 
+    /// <summary>
+    /// get state by id
+    /// </summary>
+    [HttpGet("{id}")]
+    public ActionResult<ReadStateDto> GetStateById(int id)
+    {
+        var stateItem = _context.States.Find(id);
+        if (stateItem != null)
+        {
+            return Ok(_mapper.Map<ReadStateDto>(stateItem));
+        }
+        return NotFound();
+    }
+    
 }

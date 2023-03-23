@@ -9,6 +9,4 @@ public class ReadImageDto
     [Required]
     public bool isDefault { get; set; }
 
-    [Required]
-    public int? ad_id { get; set; }
 }

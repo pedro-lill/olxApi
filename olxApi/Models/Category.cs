@@ -20,4 +20,9 @@ public class Category
 
     [NotMapped]
     public string? img => $"http://localhost:5150/Assets/Media/{slug}.png";
+
+    internal static object FirstOrDefault(Func<object, bool> value)
+    {
+        throw new NotImplementedException();
+    }
 }

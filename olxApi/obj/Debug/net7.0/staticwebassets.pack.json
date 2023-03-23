@@ -1,8 +1,184 @@
 {
   "Files": [
     {
-      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/845fcadd-d821-4496-8a69-f25f0c3ca9f0",
-      "PackagePath": "staticwebassets/Assets/Images"
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/46d64a70-302f-4543-81f9-0aa9af78e618.jpeg",
+      "PackagePath": "staticwebassets/46d64a70-302f-4543-81f9-0aa9af78e618.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/07642796-9612-4409-af1c-b76ee38f0129.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/07642796-9612-4409-af1c-b76ee38f0129.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/091d8f5c-cca0-4572-a568-eaf742c668fc.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/091d8f5c-cca0-4572-a568-eaf742c668fc.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/0dcaf654-b2d9-4852-bb42-df16e6933a54.png",
+      "PackagePath": "staticwebassets/Assets/Images/0dcaf654-b2d9-4852-bb42-df16e6933a54.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/1409cc38-2088-4c65-8a28-0f5d0539a84c.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/1409cc38-2088-4c65-8a28-0f5d0539a84c.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/16c47081-80bb-486e-b7df-deb1fe45a103.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/16c47081-80bb-486e-b7df-deb1fe45a103.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/16d87b77-fac2-4e2e-8ae5-20d46e203f4e.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/16d87b77-fac2-4e2e-8ae5-20d46e203f4e.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/1b6fbbfa-0666-4f11-84fe-20b3fbf3c08c.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/1b6fbbfa-0666-4f11-84fe-20b3fbf3c08c.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/1e67c6bf-3f19-4e84-8bae-f282a8730390.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/1e67c6bf-3f19-4e84-8bae-f282a8730390.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/27062cd7-c1e7-445b-9c14-239582f3174a.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/27062cd7-c1e7-445b-9c14-239582f3174a.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/2b223f3d-0dae-49a8-ae59-5edbfdd47cee.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/2b223f3d-0dae-49a8-ae59-5edbfdd47cee.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/2c7634be-92bf-4a1e-bd04-805f65ff799b.png",
+      "PackagePath": "staticwebassets/Assets/Images/2c7634be-92bf-4a1e-bd04-805f65ff799b.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/3351fdd0-fb12-4ee3-a133-8ad67741328a.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/3351fdd0-fb12-4ee3-a133-8ad67741328a.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/4131ab2a-b102-4f2f-8cd8-edd08538dd52.png",
+      "PackagePath": "staticwebassets/Assets/Images/4131ab2a-b102-4f2f-8cd8-edd08538dd52.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/46ade432-590d-4603-8e71-5ed56d2c39f0.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/46ade432-590d-4603-8e71-5ed56d2c39f0.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/66662535-6197-4bb2-909a-8d6d997a2e1b.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/66662535-6197-4bb2-909a-8d6d997a2e1b.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/6a36440f-9200-44ee-8b99-f205e041082e.png",
+      "PackagePath": "staticwebassets/Assets/Images/6a36440f-9200-44ee-8b99-f205e041082e.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/6e205859-2538-41aa-a5bb-c15d20d7c3cb.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/6e205859-2538-41aa-a5bb-c15d20d7c3cb.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/72866563-d51b-452c-9476-8600fef8c954.png",
+      "PackagePath": "staticwebassets/Assets/Images/72866563-d51b-452c-9476-8600fef8c954.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/7e726419-d47c-47df-bd8b-0de5ce6919f5.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/7e726419-d47c-47df-bd8b-0de5ce6919f5.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/809f47bd-6595-482d-861b-6f4dfefa4b7c.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/809f47bd-6595-482d-861b-6f4dfefa4b7c.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/81dbaa79-1b16-4e44-946d-15814c521f6a.jpg",
+      "PackagePath": "staticwebassets/Assets/Images/81dbaa79-1b16-4e44-946d-15814c521f6a.jpg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/882c630a-e750-49ff-be50-e3f686fdd958.png",
+      "PackagePath": "staticwebassets/Assets/Images/882c630a-e750-49ff-be50-e3f686fdd958.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/8933a4a2-0a37-436f-bb24-899741bfbdf2.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/8933a4a2-0a37-436f-bb24-899741bfbdf2.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/8be73851-e39d-4daf-b3ca-d338b459d2f0.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/8be73851-e39d-4daf-b3ca-d338b459d2f0.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/90bfb76f-1f11-4f09-95b4-72e0d2eaf75e.jpg",
+      "PackagePath": "staticwebassets/Assets/Images/90bfb76f-1f11-4f09-95b4-72e0d2eaf75e.jpg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/9717af6f-5ac4-4208-a772-e0f535478647.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/9717af6f-5ac4-4208-a772-e0f535478647.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/9e22b3de-c30d-467c-b8ea-6447bb8784de.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/9e22b3de-c30d-467c-b8ea-6447bb8784de.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/bc0b30f6-a465-4780-bd25-fba0ddb0b7a9.png",
+      "PackagePath": "staticwebassets/Assets/Images/bc0b30f6-a465-4780-bd25-fba0ddb0b7a9.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/bc87166d-76eb-4b3a-8282-967f529c8c16.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/bc87166d-76eb-4b3a-8282-967f529c8c16.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/bcb4ecc6-5fdb-4a28-8960-80971b0698e2.jpg",
+      "PackagePath": "staticwebassets/Assets/Images/bcb4ecc6-5fdb-4a28-8960-80971b0698e2.jpg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/c0beda54-20f0-4a4d-8e58-8123ba96bfdb.png",
+      "PackagePath": "staticwebassets/Assets/Images/c0beda54-20f0-4a4d-8e58-8123ba96bfdb.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/c4136871-4a0f-48a0-b6b0-f2594afc454f.png",
+      "PackagePath": "staticwebassets/Assets/Images/c4136871-4a0f-48a0-b6b0-f2594afc454f.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/d4dcd150-6d65-4901-bfa5-e5d7752e6579.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/d4dcd150-6d65-4901-bfa5-e5d7752e6579.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/da2b3f90-6b31-4c08-a719-18e9f511fab3.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/da2b3f90-6b31-4c08-a719-18e9f511fab3.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/dad3eb49-2fa8-4997-b25a-9bd9b5536f46.png",
+      "PackagePath": "staticwebassets/Assets/Images/dad3eb49-2fa8-4997-b25a-9bd9b5536f46.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/db421c99-0930-4374-92ce-5823009a235e.png",
+      "PackagePath": "staticwebassets/Assets/Images/db421c99-0930-4374-92ce-5823009a235e.png"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/dfb99f2b-fa32-4581-9b3e-d185e7fd6b33.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/dfb99f2b-fa32-4581-9b3e-d185e7fd6b33.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/e65f49c1-31f5-4e56-bdc0-90856b030b5f.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/e65f49c1-31f5-4e56-bdc0-90856b030b5f.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/ea63099a-0cc3-4903-a48e-62ded62944aa.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/ea63099a-0cc3-4903-a48e-62ded62944aa.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/eb5449c8-cbba-4edf-bba6-4369f777f860.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/eb5449c8-cbba-4edf-bba6-4369f777f860.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/eba2b70f-ab05-4a98-bb72-b08337cfd728.jpg",
+      "PackagePath": "staticwebassets/Assets/Images/eba2b70f-ab05-4a98-bb72-b08337cfd728.jpg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/f66a3010-0a96-4a4f-a4a1-d50c7c6bf8ae.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/f66a3010-0a96-4a4f-a4a1-d50c7c6bf8ae.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/f72c3074-2fed-4ac2-a3f5-0c5d1a1b55bd.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/f72c3074-2fed-4ac2-a3f5-0c5d1a1b55bd.jpeg"
+    },
+    {
+      "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Images/fff6fa17-290e-4b3c-a57a-cc7b3e470945.jpeg",
+      "PackagePath": "staticwebassets/Assets/Images/fff6fa17-290e-4b3c-a57a-cc7b3e470945.jpeg"
     },
     {
       "Id": "/home/desbravador/Documents/newapi/olxApi/olxApi/wwwroot/Assets/Media/baby.png",

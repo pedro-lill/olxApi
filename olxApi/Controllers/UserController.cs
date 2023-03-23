@@ -5,6 +5,7 @@ using olxApi.Dtos;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Newtonsoft.Json;
+using Microsoft.EntityFrameworkCore;
 
 namespace olxApi.Controllers;
 
@@ -74,12 +75,21 @@ public class userController : ControllerBase
     [Route("me")]
     public IActionResult RetrieveUserByToken(string token)
     {
-        var user = _context.Users.FirstOrDefault(user =>
+        var user = _context.Users
+        .Include(user => user.ads)
+        //i need acess to category and state
+        .ThenInclude(ad => ad.images)
+        .Include(ad => ad.ads)
+        .Include(ad => ad.state)
+        // i need include categorys from anuncios
+        .FirstOrDefault(user =>
         user.token == token);
+       
         if (user == null)
             return NotFound();
-        user.state = _context.States.FirstOrDefault(state => state._id == user.state_id);
-        return Ok(_mapper.Map<ReadUserDto>(user));
+        var uread = _mapper.Map<ReadUserDto>(user);
+        uread.ads = _mapper.Map<List<ReadEditAd>>(user.ads);
+        return Ok(uread);
     }
 
     /// <summary>
@@ -96,12 +106,13 @@ public class userController : ControllerBase
         {
             return NotFound();
         }
-        //define old email if a new one is not informed
         if (userDto.email == null) userDto.email = user.email;
+        if (userDto.name == null) userDto.name = user.name;
+        if (userDto.state_id == 0) userDto.state_id = user.state_id;
         _mapper.Map(userDto, user);
         user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
         _context.SaveChanges();
-        return NoContent();
+        return Ok(new{});
     }
 
 

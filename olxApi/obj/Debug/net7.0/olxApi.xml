@@ -9,11 +9,6 @@
             Get all Anuncios and filter by query with count
             </summary>
         </member>
-        <member name="M:olxApi.Controllers.anuncioController.addAnuncio(olxApi.Dtos.CreateAnuncioDto)">
-            <summary>
-            Get anuncio by id
-            </summary>
-        </member>
         <member name="M:olxApi.Controllers.anuncioController.DeleteAnuncio(System.Int32)">
             <summary>
             Delete a Anuncio

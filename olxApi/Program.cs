@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using Microsoft.Extensions.FileProviders;
+using System.Net.Mime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,9 @@ builder.Services.AddDbContext<OlxContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("OlxConnection")));
 
 // Add services to the container.
+
+
+builder.Services.AddControllers();
 
 // add automapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -24,10 +27,10 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
  {
-     c.SwaggerDoc("v1", new OpenApiInfo { Title = "olxApi", Version = "v1" });
-     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-     c.IncludeXmlComments(xmlPath);
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "olxApi", Version = "v1" });
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
  });
 
 var app = builder.Build();

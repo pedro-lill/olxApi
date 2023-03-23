@@ -5,7 +5,7 @@ namespace olxApi.Dtos;
 /// <summary>
 /// The Images's data transfer object
 /// </summary>
-public class CreateImagesDto
+public class CreateImageDto
 {    
     [Key]
     [Required]
@@ -19,5 +19,5 @@ public class CreateImagesDto
 
     [Required]
     [ForeignKey("Anuncio")]
-    public string? ad_id { get; set; }
+    public int? ad_id { get; set; }
 }

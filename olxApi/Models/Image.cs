@@ -15,5 +15,5 @@ public class Image
 
     [Required]
     public int anuncio_id { get; set; }
-    public Anuncio ?anuncio { get; set; }
+    
 }

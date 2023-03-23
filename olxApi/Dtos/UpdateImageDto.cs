@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema; 
 namespace olxApi.Dtos;
 
-public class UpdateImagesDto
+public class UpdateImageDto
 {
     [Key]
     [Required]
@@ -16,5 +16,5 @@ public class UpdateImagesDto
 
     [Required]
     [ForeignKey("Anuncio")]
-    public string? ad_id { get; set; }
+    public int? ad_id { get; set; }
 }
